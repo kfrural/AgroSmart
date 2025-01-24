@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text, SafeAreaView } from 'react-native';
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Nav = () => {
   const navigation = useNavigation();
@@ -10,17 +11,25 @@ const Nav = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.navItem} onPress={() => handlePress("Home")}>
-        <Text style={styles.navText}>Home</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.navItem} onPress={() => handlePress("Estoque")}>
-        <Text style={styles.navText}>Estoque</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.navItem} onPress={() => handlePress("Transacoes")}>
-        <Text style={styles.navText}>Transações</Text>
-      </TouchableOpacity>
-    </View>
+    <>
+      <View style={{ flex: 1 }}>
+        {/* Seu conteúdo principal aqui (ex: ScrollView, outros componentes) */}
+      </View>
+      <View style={styles.container}>
+        <TouchableOpacity style={styles.navItem} onPress={() => handlePress("Estoque")}>
+          <Icon name="bar-chart-outline" size={28} style={styles.icon} />
+          <Text style={styles.navText}>Estoque</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navItem} onPress={() => handlePress("Home")}>
+          <Icon name="home-outline" size={28} style={styles.icon} />
+          <Text style={styles.navText}>Início</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navItem} onPress={() => handlePress("Transacoes")}>
+          <Icon name="swap-horizontal-outline" size={28} style={styles.icon} />
+          <Text style={styles.navText}>Transações</Text>
+        </TouchableOpacity>
+      </View>
+    </>
   );
 };
 

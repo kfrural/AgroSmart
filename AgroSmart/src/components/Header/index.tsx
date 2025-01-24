@@ -5,7 +5,7 @@ import styles from './styles';
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Meu App</Text>
+      <Text style={styles.title}>AgroSmart</Text>
     </View>
   );
 };

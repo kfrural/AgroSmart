@@ -5,8 +5,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 20,
-    backgroundColor: '#4CAF50',
+    padding: 10,
+    backgroundColor: '#008d5a',
   },
   title: {
     fontSize: 24,
