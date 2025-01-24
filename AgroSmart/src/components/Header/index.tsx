@@ -6,9 +6,6 @@ const Header = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Meu App</Text>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Menu</Text>
-      </TouchableOpacity>
     </View>
   );
 };

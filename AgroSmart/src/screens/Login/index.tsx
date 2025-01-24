@@ -4,9 +4,11 @@ import logo from '../../assets/images/AgrosmartLogoTransp.png';
 import Input from '../../components/Input';
 import InputPassword from '../../components/InputPassword';
 import Button from '../../components/Button';
+import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
 
+  const navigation = useNavigation();
     const handleChange = (text) => {
       console.log('Texto digitado:', text);
     };
@@ -17,6 +19,7 @@ const Login = () => {
 
     const handlePress = () => {
       console.log('Botão pressionado!');
+      navigation.navigate('Home');
     };
 
   return (
