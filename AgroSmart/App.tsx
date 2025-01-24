@@ -6,7 +6,6 @@ import AppNavigator from './src/navigation/AppNavigator';
 const App = () => {
   return (
     <View style={{ flex: 1 }}>
-      <StatusBar barStyle="dark-content" />
       <AppNavigator />
     </View>
   );

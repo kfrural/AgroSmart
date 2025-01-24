@@ -9,10 +9,10 @@ const Nav = () => {
         <Text style={styles.navText}>Home</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.navItem}>
-        <Text style={styles.navText}>About</Text>
+        <Text style={styles.navText}>Estoque</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.navItem}>
-        <Text style={styles.navText}>Contact</Text>
+        <Text style={styles.navText}>Transações</Text>
       </TouchableOpacity>
     </View>
   );
