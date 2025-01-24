@@ -5,6 +5,7 @@ import Nav from '../../components/Nav';
 import Button from '../../components/Button';
 import Table from '../../components/Table';
 import { useNavigation } from '@react-navigation/native';
+import styles from './styles';
 
 const Estoque = () => {
   const navigation = useNavigation();
@@ -13,6 +14,12 @@ const Estoque = () => {
     { Produto: "Legumes", Quantidade: 300, Unidade: "kg" },
     { Produto: "Grãos", Quantidade: 200, Unidade: "kg" },
     { Produto: "Cereais", Quantidade: 400, Unidade: "kg" },
+    { Produto: "Óleos", Quantidade: 100, Unidade: "litros" },
+    { Produto: "Óleos", Quantidade: 100, Unidade: "litros" },
+    { Produto: "Óleos", Quantidade: 100, Unidade: "litros" },
+    { Produto: "Óleos", Quantidade: 100, Unidade: "litros" },
+    { Produto: "Óleos", Quantidade: 100, Unidade: "litros" },
+    { Produto: "Óleos", Quantidade: 100, Unidade: "litros" },
     { Produto: "Óleos", Quantidade: 100, Unidade: "litros" }
   ];
 
@@ -21,22 +28,22 @@ const Estoque = () => {
   };
   
   return (
-    <View>
+    <View style={styles.container}>
       <Header />
-      <View>
-        <Text>Bem-vindo à página inicial!</Text>
-        <Button 
-          title="Novo" 
-          onPress={() => handlePress("CadEstoque")}
-          style={{ width: 200 }} 
-          textStyle={{ fontSize: 18 }}
-        />
-        <Button 
-          title="Histórico" 
-          onPress={() => handlePress("Historico")} 
-          style={{ width: 200 }} 
-          textStyle={{ fontSize: 18 }}
-        />
+      <View style={styles.contentContainer}>
+        <Text style={styles.welcomeText}>Tela de Estoque</Text>
+        <View style={styles.btnsContainer}>
+          <Button 
+            title="Novo" 
+            onPress={() => handlePress("CadEstoque")}
+            style={styles.btnEst1} 
+          />
+          <Button 
+            title="Histórico" 
+            onPress={() => handlePress("Historico")} 
+            style={styles.btnEst2} 
+          />
+        </View>
         <Table data={dadosEstoque} />
       </View>
       <Nav />

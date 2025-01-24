@@ -13,7 +13,6 @@ const Nav = () => {
   return (
     <>
       <View style={{ flex: 1 }}>
-        {/* Seu conteúdo principal aqui (ex: ScrollView, outros componentes) */}
       </View>
       <View style={styles.container}>
         <TouchableOpacity style={styles.navItem} onPress={() => handlePress("Estoque")}>

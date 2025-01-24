@@ -10,7 +10,7 @@ const Home = () => {
     <View style={styles.container}>
       <Header />
       <View style={styles.contentContainer}>
-        <Text style={styles.welcomeText}>Bem-vindo à página inicial!</Text>
+        <Text style={styles.welcomeText}>Tela Inicial</Text>
         <Dashboard />
       </View>
       <Nav />
