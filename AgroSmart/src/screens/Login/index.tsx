@@ -5,8 +5,10 @@ import Input from '../../components/Input';
 import InputPassword from '../../components/InputPassword';
 import Button from '../../components/Button';
 import { useNavigation } from '@react-navigation/native';
-<<<<<<< Updated upstream
 import { authService } from "../../services/authService";
+import styles from './styles';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -44,84 +46,50 @@ const Login = () => {
   };
 
   return (
-    <View>
-      <Image source={logo} />
-      <Input 
-        placeholder="Email"
-        value={email}
-        onChangeText={handleChangeEmail}
-      />
-      <InputPassword 
-        placeholder="Digite sua senha"
-        value={password}
-        onChangeText={handleChangePassword}
-      />
-      {error && <Text style={{ color: 'red' }}>{error}</Text>}
-      <Button 
-        title="Login" 
-        onPress={handleSubmit} 
-        style={{ width: 200 }} 
-        textStyle={{ fontSize: 18 }}
-=======
-import styles from './styles';
-import Icon from 'react-native-vector-icons/Ionicons';
-
-const Login = () => {
-  const navigation = useNavigation();
-
-  const handleChange = (text) => {
-    console.log('Texto digitado:', text);
-  };
-
-  const handleChangePassword = (text) => {
-    console.log('Texto digitado:', text);
-  };
-
-  const handlePress = () => {
-    console.log('Botão pressionado!');
-    navigation.navigate('Home');
-  };
-
-  return (
     <View style={styles.container}>
       <Image style={styles.imgLogo} source={logo} />
-      <Text style={styles.title}>Login</Text>
 
+      <Text style={styles.title}>Login</Text>
       <View style={styles.formGroup}>
-        <Text style={styles.label}>Usuário</Text>
+        <Text style={styles.label}>E-mail</Text>
         <View style={styles.inputContainer}>
           <Icon name="person-outline" size={25} style={styles.icon} />
           <Input
-            placeholder=""
-            value=""
-            onChangeText={handleChange}
+            placeholder="Informe seu e-mail"
+            value={email}
+            onChangeText={handleChangeEmail}
           />
+          </View>
         </View>
-      </View>
 
-
-      <View style={styles.formGroup}>
-        <Text style={styles.label}>Senha</Text>
-        <View style={styles.inputContainer}>
-          <Icon name="lock-closed-outline" size={25} style={styles.icon} />
-          <InputPassword
-            //style={styles.inputField}
-            placeholder=""
-            value=""
-            onChangeText={handleChangePassword}
-          />
-        </View>
-      </View>
+        <View style={styles.formGroup}>
+          <Text style={styles.label}>Senha</Text>
+            <View style={styles.inputContainer}>
+              <Icon name="lock-closed-outline" size={25} style={styles.icon} />
+              <InputPassword
+                style={styles.inputField}
+                placeholder="Informe sua senha"
+                value={password}
+                onChangeText={handleChangePassword}
+              />
+              </View>
+            </View>
+      {error && <Text style={{ color: 'red' }}>{error}</Text>}
 
       <Button
-        title="ENTRAR"
-        onPress={handlePress}
-        style={styles.btnLogin}
->>>>>>> Stashed changes
-      />
+              title="ENTRAR"
+              onPress={handleSubmit}
+              style={styles.btnLogin}
+            />
     </View>
   );
 };
-
-
+      
 export default Login;
+      
+            
+      
+      
+            
+      
+            
