@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import Input from '../Input';
 import styles from './styles';
 
 interface InputPasswordProps {
@@ -21,12 +20,13 @@ const InputPassword = ({ placeholder, value, onChangeText }: InputPasswordProps)
   return (
     <View style={styles.inputContainer}>
       <TextInput
-        style={[styles.input, visible && styles.visible]}
+        style={[styles.input]}
         placeholder={placeholder}
+        placeholderTextColor="#aaa"
         value={inputValue}
         onChangeText={(text) => {
           setInputValue(text);
-          onChangeText(text);
+          if (onChangeText) onChangeText(text);
         }}
         secureTextEntry={!visible}
       />

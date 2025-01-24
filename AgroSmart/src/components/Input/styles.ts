@@ -10,16 +10,15 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderColor: '#ccc',
-    borderWidth: 1,
+    //borderWidth: 1,
     borderRadius: 5,
-    backgroundColor: '#fff',
   },
-  visible: {
-    backgroundColor: '#f0f0f0',
-  },
-  iconPassword: {
-    marginLeft: 10,
-  },
+   visible: {
+     backgroundColor: '#f0f0f0',
+   },
+  // iconPassword: {
+  //   marginLeft: 10,
+  // },
   });
 
   export default styles;
