@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  nav: {
-    
+  text: {
+    color: '#00f'
   }
 });
 

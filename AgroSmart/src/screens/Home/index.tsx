@@ -10,7 +10,7 @@ const Home = () => {
     <View>
       <Header />
       <View>
-        <Text>Bem-vindo à página inicial!</Text>
+        <Text style={styles.text}>Bem-vindo à página inicial!</Text>
         <Dashboard />
       </View>
       <Nav />
