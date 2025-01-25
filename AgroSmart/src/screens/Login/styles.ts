@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: 'bold',
     color: 'black',
-    marginTop: 70
   },
   formGroup: {
     width: '100%',
