@@ -1,5 +1,5 @@
-import React, { useState} from 'react';
-import { View, Text, Image } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Image, KeyboardAvoidingView, ScrollView, Platform } from 'react-native';
 import logo from '../../assets/images/agroLogo.png';
 import Input from '../../components/Input';
 import InputPassword from '../../components/InputPassword';
@@ -8,7 +8,6 @@ import { useNavigation } from '@react-navigation/native';
 import { authService } from "../../services/authService";
 import styles from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
-
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,7 +20,7 @@ const Login = () => {
 
   const handleSubmit = async (e: React.FormEvent | null) => {
     e?.preventDefault();
-    
+
     if (!email || !password) {
       setError("Por favor, preencha todos os campos");
       return;
@@ -32,7 +31,7 @@ const Login = () => {
       navigation.navigate("Home");
     } catch (error) {
       console.error("Erro ao fazer login:", error);
-      
+
       if (error instanceof Error && error.message.includes('invalid email')) {
         setError("Email inválido");
       } else if (error instanceof Error && error.message.includes('invalid password')) {
@@ -46,50 +45,48 @@ const Login = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior='padding'// Ajuste automático para iOS/Android
+      keyboardVerticalOffset={20} // Ajusta a posição do teclado
+    >
         <Image style={styles.imgLogo} source={logo} />
-      <Text style={styles.title}>Login</Text>
-      <View style={styles.formGroup}>
-        <Text style={styles.label}>E-mail</Text>
-        <View style={styles.inputContainer}>
-          <Icon name="person-outline" size={25} style={styles.icon} />
-          <Input
-            placeholder="Informe seu e-mail"
-            value={email}
-            onChangeText={handleChangeEmail}
-          />
+        <Text style={styles.title}>Login</Text>
+
+        <View style={styles.formGroup}>
+          <Text style={styles.label}>E-mail</Text>
+          <View style={styles.inputContainer}>
+            <Icon name="person-outline" size={25} style={styles.icon} />
+            <Input
+              placeholder="Informe seu e-mail"
+              value={email}
+              onChangeText={handleChangeEmail}
+            />
+          </View>
         </View>
-      </View>
-  
-      <View style={styles.formGroup}>
-        <Text style={styles.label}>Senha</Text>
-        <View style={styles.inputContainer}>
-          <Icon name="lock-closed-outline" size={25} style={styles.icon} />
-          <InputPassword
-            style={styles.inputField}
-            placeholder="Informe sua senha"
-            value={password}
-            onChangeText={handleChangePassword}
-          />
+
+        <View style={styles.formGroup}>
+          <Text style={styles.label}>Senha</Text>
+          <View style={styles.inputContainer}>
+            <Icon name="lock-closed-outline" size={25} style={styles.icon} />
+            <InputPassword
+              style={styles.inputField}
+              placeholder="Informe sua senha"
+              value={password}
+              onChangeText={handleChangePassword}
+            />
+          </View>
         </View>
-      </View>
-  
-      {error && <Text style={{ color: 'red' }}>{error}</Text>}
-  
-      <Button
-        title="ENTRAR"
-        onPress={handleSubmit}
-        style={styles.btnLogin}
-      />
-    </View>
+
+        {error && <Text style={{ color: 'red' }}>{error}</Text>}
+
+        <Button
+          title="ENTRAR"
+          onPress={handleSubmit}
+          style={styles.btnLogin}
+        />
+    </KeyboardAvoidingView>
   );
-};  
-      
+};
+
 export default Login;
-      
-            
-      
-      
-            
-      
-            

@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   iconPassword: {
-    marginLeft: 10,
+    marginRight: 30,
     color: '#000', 
   },
 });

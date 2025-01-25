@@ -7,6 +7,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
   },
+  scrollContent: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    padding: 16,
+  },
   imgLogo: {
     width: 350,
     height: 350,
@@ -37,7 +42,6 @@ const styles = StyleSheet.create({
     height: 50, 
   },
   icon: {
-    marginRight: 10,
     color: '#000',
   },
   // inputField: {

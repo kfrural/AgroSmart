@@ -144,6 +144,7 @@ const Dashboard = () => {
     <div style={styles.container}>
       <h2 style={styles.textDashboard}>Pendências Mensais</h2>
       <ApexCharts options={options} series={series} type="donut" height={350} />
+
       <div style={{ marginTop: '20px' }}>
         {months.map((month, index) => (
           <div key={month} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px', fontSize: '16px', fontFamily: 'Arial, sans-serif' }}>

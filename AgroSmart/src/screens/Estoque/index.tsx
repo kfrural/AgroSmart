@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
 import Header from '../../components/Header';
 import Nav from '../../components/Nav';
 import Button from '../../components/Button';
@@ -28,26 +28,26 @@ const Estoque = () => {
   };
   
   return (
-    <View style={styles.container}>
-      <Header />
-      <View style={styles.contentContainer}>
-        <Text style={styles.welcomeText}>Tela de Estoque</Text>
-        <View style={styles.btnsContainer}>
-          <Button 
-            title="Novo" 
-            onPress={() => handlePress("CadEstoque")}
-            style={styles.btnEst1} 
-          />
-          <Button 
-            title="Histórico" 
-            onPress={() => handlePress("Historico")} 
-            style={styles.btnEst2} 
-          />
+      <View style={styles.container}>
+        <Header />
+        <View style={styles.contentContainer}>
+          <Text style={styles.welcomeText}>Tela de Estoque</Text>
+          <View style={styles.btnsContainer}>
+            <Button 
+              title="Novo" 
+              onPress={() => handlePress("CadEstoque")}
+              style={styles.btnEst1} 
+            />
+            <Button 
+              title="Histórico" 
+              onPress={() => handlePress("Historico")} 
+              style={styles.btnEst2} 
+            />
+          </View>
+          <Table data={dadosEstoque} />
         </View>
-        <Table data={dadosEstoque} />
+        <Nav />
       </View>
-      <Nav />
-    </View>
   );
 };
 

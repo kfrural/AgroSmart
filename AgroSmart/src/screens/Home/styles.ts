@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     padding: 20,
     alignItems: 'center',
+    marginBottom: 16, 
   },
   welcomeText: {
     fontSize: 22,
@@ -15,6 +16,10 @@ const styles = StyleSheet.create({
     color: '#333',
     marginBottom: 20,
   },
+  scrollContent: {
+    flexGrow: 1,
+    padding: 16, 
+  }
 });
 
 export default styles;
