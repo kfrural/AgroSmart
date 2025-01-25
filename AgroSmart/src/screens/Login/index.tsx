@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import { View, Text, Image } from 'react-native';
-import logo from '../../assets/images/AgrosmartLogoTransp.png';
+import logo from '../../assets/images/agroLogo.png';
 import Input from '../../components/Input';
 import InputPassword from '../../components/InputPassword';
 import Button from '../../components/Button';
@@ -47,8 +47,7 @@ const Login = () => {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.imgLogo} source={logo} />
-
+        <Image style={styles.imgLogo} source={logo} />
       <Text style={styles.title}>Login</Text>
       <View style={styles.formGroup}>
         <Text style={styles.label}>E-mail</Text>
@@ -59,31 +58,32 @@ const Login = () => {
             value={email}
             onChangeText={handleChangeEmail}
           />
-          </View>
         </View>
-
-        <View style={styles.formGroup}>
-          <Text style={styles.label}>Senha</Text>
-            <View style={styles.inputContainer}>
-              <Icon name="lock-closed-outline" size={25} style={styles.icon} />
-              <InputPassword
-                style={styles.inputField}
-                placeholder="Informe sua senha"
-                value={password}
-                onChangeText={handleChangePassword}
-              />
-              </View>
-            </View>
+      </View>
+  
+      <View style={styles.formGroup}>
+        <Text style={styles.label}>Senha</Text>
+        <View style={styles.inputContainer}>
+          <Icon name="lock-closed-outline" size={25} style={styles.icon} />
+          <InputPassword
+            style={styles.inputField}
+            placeholder="Informe sua senha"
+            value={password}
+            onChangeText={handleChangePassword}
+          />
+        </View>
+      </View>
+  
       {error && <Text style={{ color: 'red' }}>{error}</Text>}
-
+  
       <Button
-              title="ENTRAR"
-              onPress={handleSubmit}
-              style={styles.btnLogin}
-            />
+        title="ENTRAR"
+        onPress={handleSubmit}
+        style={styles.btnLogin}
+      />
     </View>
   );
-};
+};  
       
 export default Login;
       

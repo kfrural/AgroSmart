@@ -3,22 +3,20 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 20,
-    backgroundColor: "#fff", 
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
   },
   imgLogo: {
-    height: 250,
-    width: 250,
+    width: 350,
+    height: 350,
     resizeMode: 'contain',
-    marginBottom: 30,
   },
   title: {
     fontSize: 32,
-    marginBottom: 40,
     fontWeight: 'bold',
     color: 'black',
+    marginTop: 70
   },
   formGroup: {
     width: '100%',

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
 import Input from '../../components/Input';
 import { useNavigation } from '@react-navigation/native';
+import styles from './styles';
 
 const StockRegistration = () => {
   const [id, setId] = useState('');
@@ -20,7 +21,7 @@ const StockRegistration = () => {
       };
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Cadastrar Novo Produto</Text>
       <Input 
         placeholder="Produto"
